@@ -547,7 +547,7 @@ namespace ThreeSixSafety
 
         protected void readAnswers()
         {
-            string path = @"c:\users\thomas\documents\visual studio 2013\Projects\Survey_Dev\Survey_Dev\Answers.csv";
+            string path = @"C:\inetpub\wwwroot\ThreeSixSafety\Answers.csv";
             try
             {
                 if (File.Exists(path))
@@ -888,7 +888,7 @@ namespace ThreeSixSafety
         {
             string ty = "";
 
-            TextFieldParser parser = new TextFieldParser(@"c:\users\thomas\documents\visual studio 2013\Projects\Survey_Dev\Survey_Dev\Questions.csv", System.Text.Encoding.GetEncoding("ISO-8859-1"));
+            TextFieldParser parser = new TextFieldParser(@"C:\inetpub\wwwroot\ThreeSixSafety\Questions.csv", System.Text.Encoding.GetEncoding("ISO-8859-1"));
             parser.TextFieldType = FieldType.Delimited;
             parser.SetDelimiters(",");
 
