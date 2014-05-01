@@ -1,0 +1,110 @@
+﻿#topLeftDiv{
+        background-image:url('Images/1-purple.png');
+        background-size:100%;
+        position:absolute;
+        height:150px;
+        width:150px;
+    }
+    #topRightDiv{
+        background-image:url('Images/2-red.png');
+        background-size:100%;
+        position:absolute;
+        height:150px;
+        width:150px;
+        left:150px;
+    }
+    #botRightDiv{
+        background-image:url('Images/3-blue.png');
+        background-size:100%;
+        position:absolute;
+        height:150px;
+        width:150px;
+        top:150px;
+        left:150px;
+    }
+    #botLeftDiv{
+        background-image:url('Images/4-yellow.png');
+        background-size:100%;
+        position:absolute;
+        height:150px;
+        width:150px;
+        top:150px;
+    }
+
+   #topLeftOverlay {
+       position:absolute;
+       opacity:0;
+       background-color:gray;
+       height:160px;
+       width:350px;
+   }
+   #topRightOverlay {
+       position:absolute;
+       opacity:0;
+       background-color:gray;
+       height:160px;
+       width:350px;
+   }
+   #botRightOverlay {
+       position:absolute;
+       opacity:0;
+       background-color:gray;
+       height:160px;
+       width:350px;
+   }
+   #botLeftOverlay {
+       position:absolute;
+       opacity:0;
+       background-color:gray;
+       height:160px;
+       width:350px;
+   }
+
+   #topLeftDiv:hover #topLeftOverlay {
+       opacity:0.95;
+           -webkit-transform: scale(0.75);
+        -moz-transform: scale(0.75);
+        bottom:5px;
+        right:5px;
+        z-index:10;
+   }
+   #topRightDiv:hover #topRightOverlay {
+       opacity:0.95;
+           -webkit-transform: scale(0.75);
+        -moz-transform: scale(0.75);
+        left:5px;
+        bottom:5px;
+        z-index:10;
+   }
+   #botRightDiv:hover #botRightOverlay {
+       opacity:0.95;
+           -webkit-transform: scale(0.75);
+        -moz-transform: scale(0.75);
+        z-index:10;
+   }
+   #botLeftDiv:hover #botLeftOverlay {
+       opacity:0.95;
+           -webkit-transform: scale(0.75);
+        -moz-transform: scale(0.75);
+        right:5px;
+        z-index:10;
+   }
+
+   .divCSS {
+       position:relative;
+       text-align:center;
+       width:300px;
+       height:300px;
+       margin:0 auto;
+       z-index:5;
+       margin-top:50px;
+   }
+   .mainCSS {
+       position:absolute;
+       height:300px;
+       width:300px;
+       margin:0 auto;
+       left:0px;
+       pointer-events:none;
+   }
+
