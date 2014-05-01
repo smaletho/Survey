@@ -60,36 +60,6 @@
        width:350px;
    }
 
-   #topLeftDiv:hover #topLeftOverlay {
-       opacity:0.95;
-           -webkit-transform: scale(0.75);
-        -moz-transform: scale(0.75);
-        bottom:5px;
-        right:5px;
-        z-index:10;
-   }
-   #topRightDiv:hover #topRightOverlay {
-       opacity:0.95;
-           -webkit-transform: scale(0.75);
-        -moz-transform: scale(0.75);
-        left:5px;
-        bottom:5px;
-        z-index:10;
-   }
-   #botRightDiv:hover #botRightOverlay {
-       opacity:0.95;
-           -webkit-transform: scale(0.75);
-        -moz-transform: scale(0.75);
-        z-index:10;
-   }
-   #botLeftDiv:hover #botLeftOverlay {
-       opacity:0.95;
-           -webkit-transform: scale(0.75);
-        -moz-transform: scale(0.75);
-        right:5px;
-        z-index:10;
-   }
-
    .divCSS {
        position:relative;
        text-align:center;

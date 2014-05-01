@@ -5,7 +5,15 @@
 
 .overlayText{
     margin:0 auto;
-    color:white;
     font-family:Calibri;
+    font-size:14px;
 }
 
+.headText{
+    margin:0 auto;
+    font-family:Calibri;
+    margin-top:5px;
+    margin-bottom:5px;
+    font-size:20px;
+    font-weight:bolder;
+}
