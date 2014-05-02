@@ -58,7 +58,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Answers.csv" />
     <Content Include="EditQuestions.aspx" />
     <Content Include="Images\1-purple.png" />
     <Content Include="Images\2-red.png" />
@@ -71,6 +70,8 @@
     <Content Include="Images\top-right-goal.png" />
     <Content Include="Printout.aspx" />
     <Content Include="Questions.csv" />
+    <Content Include="Answers-pre.csv" />
+    <Content Include="Answers.csv" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -539,51 +539,57 @@ namespace ThreeSixSafety
             else
             {
                 //read from CSV into userData
-                readAnswers();
-
-                //read from userData into categoryData
-                parseData();
-
-                //scale pie slices
-                scaleSlices();
-
-                //fill in labels/overlays
-                fillLabels();
-
-                //query string stuff
-                string riskGoalstr = Request.QueryString["risk"];
-                string complianceGoalstr = Request.QueryString["comp"];
-                string cultureGoalstr = Request.QueryString["cul"];
-                string financeGoalstr = Request.QueryString["fin"];
-
-                if (riskGoalstr != null)
+                if (readAnswers() == false)
                 {
-                    decimal riskGoal = Convert.ToDecimal(riskGoalstr);
-                    scaleDiv(riskGoalImg, riskGoal, 150, "tl");
-                    riskDrop.Items.FindByText(riskGoalstr).Selected = true;
+                    titleText.InnerHtml = "Circumplex Data - Waiting for post data...";
+                    return;
                 }
-                if (complianceGoalstr != null)
+                else
                 {
-                    decimal compGoal = Convert.ToDecimal(complianceGoalstr);
-                    scaleDiv(compGoalImg, compGoal, 150, "tr");
-                    compDrop.Items.FindByText(complianceGoalstr).Selected = true;
-                }
-                if (cultureGoalstr != null)
-                {
-                    decimal culGoal = Convert.ToDecimal(cultureGoalstr);
-                    scaleDiv(culGoalImg, culGoal, 150, "br");
-                    culDrop.Items.FindByText(cultureGoalstr).Selected = true;
-                }
-                if (financeGoalstr != null)
-                {
-                    decimal finGoal = Convert.ToDecimal(financeGoalstr);
-                    scaleDiv(finGoalImg, finGoal, 150, "bl");
-                    finDrop.Items.FindByText(financeGoalstr).Selected = true;
+                    //read from userData into categoryData
+                    parseData();
+
+                    //scale pie slices
+                    scaleSlices();
+
+                    //fill in labels/overlays
+                    fillLabels();
+
+                    //query string stuff
+                    string riskGoalstr = Request.QueryString["risk"];
+                    string complianceGoalstr = Request.QueryString["comp"];
+                    string cultureGoalstr = Request.QueryString["cul"];
+                    string financeGoalstr = Request.QueryString["fin"];
+
+                    if (riskGoalstr != null)
+                    {
+                        decimal riskGoal = Convert.ToDecimal(riskGoalstr);
+                        scaleDiv(riskGoalImg, riskGoal, 150, "tl");
+                        riskDrop.Items.FindByText(riskGoalstr).Selected = true;
+                    }
+                    if (complianceGoalstr != null)
+                    {
+                        decimal compGoal = Convert.ToDecimal(complianceGoalstr);
+                        scaleDiv(compGoalImg, compGoal, 150, "tr");
+                        compDrop.Items.FindByText(complianceGoalstr).Selected = true;
+                    }
+                    if (cultureGoalstr != null)
+                    {
+                        decimal culGoal = Convert.ToDecimal(cultureGoalstr);
+                        scaleDiv(culGoalImg, culGoal, 150, "br");
+                        culDrop.Items.FindByText(cultureGoalstr).Selected = true;
+                    }
+                    if (financeGoalstr != null)
+                    {
+                        decimal finGoal = Convert.ToDecimal(financeGoalstr);
+                        scaleDiv(finGoalImg, finGoal, 150, "bl");
+                        finDrop.Items.FindByText(financeGoalstr).Selected = true;
+                    }
                 }
             }
         }
 
-        protected void readAnswers()
+        protected bool readAnswers()
         {
             string path = @"C:\inetpub\wwwroot\ThreeSixSafety\Answers.csv";
             try
@@ -614,6 +620,15 @@ namespace ThreeSixSafety
             catch (Exception x)
             {
                 Console.WriteLine("The process failed: {0}", x.ToString());
+            }
+
+            if (allUsers.Count() == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
 
@@ -1302,6 +1317,23 @@ namespace ThreeSixSafety
 
             string newUrl = "~/Admin.aspx?risk=" + r + "&cul=" + cu + "&comp=" + co + "&fin=" + f;
             Response.Redirect(newUrl);
+        }
+
+        protected void switchResultsButton_Click(object sender, EventArgs e)
+        {
+            //copy answers.csv to answers-pre.csv and erase answers.csv
+            Application.Lock();
+            Application["SurveyState"] = "Post-Implementation";
+            Application.UnLock();
+            switchResultsButton.Visible = false;
+
+            copyToOldData();
+        }
+
+        protected void copyToOldData()
+        {
+            File.Copy("C:\\inetpub\\wwwroot\\ThreeSixSafety\\Answers.csv", "C:\\inetpub\\wwwroot\\ThreeSixSafety\\Answers-pre.csv", true);
+            System.IO.File.WriteAllText(@"C:\inetpub\wwwroot\ThreeSixSafety\Answers.csv", string.Empty);
         }
     }
 }

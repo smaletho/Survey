@@ -13,7 +13,9 @@
     <form id="form1" runat="server">
         <div>
             <div style="text-align: center">
-                <h1 style="font-family: Calibri">Circumplex Data</h1>
+                <h1 id="titleText" runat="server" style="font-family: Calibri">Circumplex Data</h1>
+                <br />
+                <asp:Button ID="switchResultsButton" runat="server" Text="Switch to Post-Implementation Results" OnClick="switchResultsButton_Click" />
             </div>
             <div class="divCSS">
                 <table>
