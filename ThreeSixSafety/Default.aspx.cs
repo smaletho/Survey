@@ -13,5 +13,35 @@ namespace ThreeSixSafety
         {
 
         }
+
+        protected void submitButton_Click(object sender, EventArgs e)
+        {
+            string runScript = "<script>alert('";
+            if (nameBox.Text == "")
+            {
+                runScript += "Please enter your name.');</script>";
+            }
+            else
+            {
+                Session["Name"] = nameBox.Text;
+                Response.Redirect("~/Survey.aspx", false);
+            }
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "response", runScript);
+
+        }
+
+        protected void loginButton_Click(object sender, EventArgs e)
+        {
+            if (loginBox.Text != "barry" && passwordBox.Text != "hull")
+            {
+                string al = "<script>alert('Username or password are incorrect. Try again.');</script>";
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "response", al);
+            }
+            else
+            {
+                Response.Redirect("~/Admin.aspx");
+                Session["loggedIn"] = "yes";
+            }
+        }
     }
 }

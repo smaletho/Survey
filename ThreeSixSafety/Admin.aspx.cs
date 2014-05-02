@@ -532,17 +532,24 @@ namespace ThreeSixSafety
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //read from CSV into userData
-            readAnswers();
+            if (Session["loggedIn"] != "yes")
+            {
+                Response.Redirect("~/Default.aspx");
+            }
+            else
+            {
+                //read from CSV into userData
+                readAnswers();
 
-            //read from userData into categoryData
-            parseData();
+                //read from userData into categoryData
+                parseData();
 
-            //scale pie slices
-            scaleSlices();
+                //scale pie slices
+                scaleSlices();
 
-            //fill in labels/overlays
-            fillLabels();
+                //fill in labels/overlays
+                fillLabels();
+            }
         }
 
         protected void readAnswers()
