@@ -39,8 +39,8 @@ namespace ThreeSixSafety
             }
             else
             {
-                Response.Redirect("~/Admin.aspx");
                 Session["loggedIn"] = "yes";
+                Response.Redirect("~/Admin.aspx");
             }
         }
     }
