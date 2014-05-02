@@ -25,26 +25,21 @@
                         </td>
                         <td rowspan="2" style="width: 300px; height: 300px; position: absolute;">
                             <div id="topLeftDiv" class="hovDiv" runat="server">
-
-                                <div id="topLeftOverlay" runat="server">
-                                </div>
+                                
                             </div>
                             <div id="topRightDiv" class="hovDiv" runat="server">
 
-                                <div id="topRightOverlay" runat="server">
-                                </div>
                             </div>
                             <div id="botLeftDiv" class="hovDiv" runat="server">
 
-                                <div id="botLeftOverlay" runat="server">
-                                </div>
                             </div>
                             <div id="botRightDiv" class="hovDiv" runat="server">
 
-                                <div id="botRightOverlay" runat="server">
-                                </div>
                             </div>
-
+                            <div id="riskGoalImg" runat="server" style="background-image:url('Images/top-left-goal.png');background-size:100%;position:absolute;height:150px;width:150px;"></div>
+                            <div id="compGoalImg" runat="server" style="background-image:url('Images/top-right-goal.png');background-size:100%;position:absolute;height:150px;width:150px;left:150px"></div>
+                            <div id="finGoalImg" runat="server" style="background-image:url('Images/bot-left-goal.png');background-size:100%;position:absolute;height:150px;width:150px;top:150px"></div>
+                            <div id="culGoalImg" runat="server" style="background-image:url('Images/bot-right-goal.png');background-size:100%;position:absolute;height:150px;width:150px;top:150px;left:150px"></div>
                             <asp:Image ID="Image1" ImageUrl="Images/full-circle.png" CssClass="mainCSS" runat="server" />
                         </td>
                         <td style="position: absolute; height: 145px; width: 350px; left: -370px; top: 158px;background-color:lightgray;opacity:0.7">
@@ -69,6 +64,53 @@
 
             </div>
             <br />
+            <p>Set Risk Goal: </p>
+            <asp:DropDownList id="riskDrop" runat="server">
+                <asp:ListItem Text="1"></asp:ListItem>
+                <asp:ListItem Text="2"></asp:ListItem>
+                <asp:ListItem Text="3"></asp:ListItem>
+                <asp:ListItem Text="4"></asp:ListItem>
+                <asp:ListItem Text="5"></asp:ListItem>
+                <asp:ListItem Text="6"></asp:ListItem>
+                <asp:ListItem Text="7"></asp:ListItem>
+            </asp:DropDownList>
+            <br />
+            <p>Set Compliance Goal: </p>
+            <asp:DropDownList id="compDrop" runat="server" >
+                <asp:ListItem Text="1"></asp:ListItem>
+                <asp:ListItem Text="2"></asp:ListItem>
+                <asp:ListItem Text="3"></asp:ListItem>
+                <asp:ListItem Text="4"></asp:ListItem>
+                <asp:ListItem Text="5"></asp:ListItem>
+                <asp:ListItem Text="6"></asp:ListItem>
+                <asp:ListItem Text="7"></asp:ListItem>
+            </asp:DropDownList>
+            <br />
+            <p>Set Financial Goal: </p>
+            <asp:DropDownList id="finDrop" runat="server">
+                <asp:ListItem Text="1"></asp:ListItem>
+                <asp:ListItem Text="2"></asp:ListItem>
+                <asp:ListItem Text="3"></asp:ListItem>
+                <asp:ListItem Text="4"></asp:ListItem>
+                <asp:ListItem Text="5"></asp:ListItem>
+                <asp:ListItem Text="6"></asp:ListItem>
+                <asp:ListItem Text="7"></asp:ListItem>
+            </asp:DropDownList>
+            <br />
+            <p>Set Culture Goal: </p>
+            <asp:DropDownList id="culDrop" runat="server">
+                <asp:ListItem Text="1"></asp:ListItem>
+                <asp:ListItem Text="2"></asp:ListItem>
+                <asp:ListItem Text="3"></asp:ListItem>
+                <asp:ListItem Text="4"></asp:ListItem>
+                <asp:ListItem Text="5"></asp:ListItem>
+                <asp:ListItem Text="6"></asp:ListItem>
+                <asp:ListItem Text="7"></asp:ListItem>
+            </asp:DropDownList>
+            <br />
+            <asp:Button ID="submitButton" runat="server" Text="Submit Goal Values" OnClick="submitButton_Click" />
+            <br />
+            
             <hr />
             <br />
             <div style="text-align: center; margin: 0 auto">

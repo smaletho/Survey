@@ -64,7 +64,11 @@
     <Content Include="Images\2-red.png" />
     <Content Include="Images\3-blue.png" />
     <Content Include="Images\4-yellow.png" />
+    <Content Include="Images\bot-left-goal.png" />
+    <Content Include="Images\bot-right-goal.png" />
     <Content Include="Images\full-circle.png" />
+    <Content Include="Images\top-left-goal.png" />
+    <Content Include="Images\top-right-goal.png" />
     <Content Include="Printout.aspx" />
     <Content Include="Questions.csv" />
     <None Include="Web.Debug.config">
