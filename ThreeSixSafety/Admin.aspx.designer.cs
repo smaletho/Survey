@@ -49,15 +49,6 @@ namespace ThreeSixSafety {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl topLeftDiv;
         
         /// <summary>
-        /// topLeftOverlay control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl topLeftOverlay;
-        
-        /// <summary>
         /// topRightDiv control.
         /// </summary>
         /// <remarks>
@@ -65,15 +56,6 @@ namespace ThreeSixSafety {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl topRightDiv;
-        
-        /// <summary>
-        /// topRightOverlay control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl topRightOverlay;
         
         /// <summary>
         /// botLeftDiv control.
@@ -85,15 +67,6 @@ namespace ThreeSixSafety {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl botLeftDiv;
         
         /// <summary>
-        /// botLeftOverlay control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl botLeftOverlay;
-        
-        /// <summary>
         /// botRightDiv control.
         /// </summary>
         /// <remarks>
@@ -103,13 +76,40 @@ namespace ThreeSixSafety {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl botRightDiv;
         
         /// <summary>
-        /// botRightOverlay control.
+        /// riskGoalImg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl botRightOverlay;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl riskGoalImg;
+        
+        /// <summary>
+        /// compGoalImg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl compGoalImg;
+        
+        /// <summary>
+        /// finGoalImg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl finGoalImg;
+        
+        /// <summary>
+        /// culGoalImg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl culGoalImg;
         
         /// <summary>
         /// Image1 control.
@@ -146,6 +146,51 @@ namespace ThreeSixSafety {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl cultureAvLab;
+        
+        /// <summary>
+        /// riskDrop control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList riskDrop;
+        
+        /// <summary>
+        /// compDrop control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList compDrop;
+        
+        /// <summary>
+        /// finDrop control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList finDrop;
+        
+        /// <summary>
+        /// culDrop control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList culDrop;
+        
+        /// <summary>
+        /// submitButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button submitButton;
         
         /// <summary>
         /// execPurpleImg control.

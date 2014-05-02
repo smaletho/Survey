@@ -549,6 +549,37 @@ namespace ThreeSixSafety
 
                 //fill in labels/overlays
                 fillLabels();
+
+                //query string stuff
+                string riskGoalstr = Request.QueryString["risk"];
+                string complianceGoalstr = Request.QueryString["comp"];
+                string cultureGoalstr = Request.QueryString["cul"];
+                string financeGoalstr = Request.QueryString["fin"];
+
+                if (riskGoalstr != null)
+                {
+                    decimal riskGoal = Convert.ToDecimal(riskGoalstr);
+                    scaleDiv(riskGoalImg, riskGoal, 150, "tl");
+                    riskDrop.Items.FindByText(riskGoalstr).Selected = true;
+                }
+                if (complianceGoalstr != null)
+                {
+                    decimal compGoal = Convert.ToDecimal(complianceGoalstr);
+                    scaleDiv(compGoalImg, compGoal, 150, "tr");
+                    compDrop.Items.FindByText(complianceGoalstr).Selected = true;
+                }
+                if (cultureGoalstr != null)
+                {
+                    decimal culGoal = Convert.ToDecimal(cultureGoalstr);
+                    scaleDiv(culGoalImg, culGoal, 150, "br");
+                    culDrop.Items.FindByText(cultureGoalstr).Selected = true;
+                }
+                if (financeGoalstr != null)
+                {
+                    decimal finGoal = Convert.ToDecimal(financeGoalstr);
+                    scaleDiv(finGoalImg, finGoal, 150, "bl");
+                    finDrop.Items.FindByText(financeGoalstr).Selected = true;
+                }
             }
         }
 
@@ -1260,6 +1291,17 @@ namespace ThreeSixSafety
                 + "<br />Number of Employees: "
                 + userAnswers.getTotalPeople().ToString()
                 + "<br />" + numFin;
+        }
+
+        protected void submitButton_Click(object sender, EventArgs e)
+        {
+            string r = riskDrop.SelectedItem.ToString();
+            string cu = culDrop.SelectedItem.ToString();
+            string co = compDrop.SelectedItem.ToString();
+            string f = finDrop.SelectedItem.ToString();
+
+            string newUrl = "~/Admin.aspx?risk=" + r + "&cul=" + cu + "&comp=" + co + "&fin=" + f;
+            Response.Redirect(newUrl);
         }
     }
 }
