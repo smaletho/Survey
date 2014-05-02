@@ -11,7 +11,7 @@ namespace ThreeSixSafety
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["loggedIn"] != "yes")
+            if (((string)Session["loggedIn"]) != "yes")
             {
                 Response.Redirect("~/Default.aspx");
             }
